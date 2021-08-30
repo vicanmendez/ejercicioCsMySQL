@@ -1,0 +1,17 @@
+C:\Users\Víctor\source\repos\testBD\testBD\bin\Debug\testBD.exe.config
+C:\Users\Víctor\source\repos\testBD\testBD\bin\Debug\testBD.exe
+C:\Users\Víctor\source\repos\testBD\testBD\bin\Debug\testBD.pdb
+C:\Users\Víctor\source\repos\testBD\testBD\bin\Debug\MySql.Data.dll
+C:\Users\Víctor\source\repos\testBD\testBD\bin\Debug\Google.Protobuf.dll
+C:\Users\Víctor\source\repos\testBD\testBD\bin\Debug\BouncyCastle.Crypto.dll
+C:\Users\Víctor\source\repos\testBD\testBD\bin\Debug\Ubiety.Dns.Core.dll
+C:\Users\Víctor\source\repos\testBD\testBD\bin\Debug\Renci.SshNet.dll
+C:\Users\Víctor\source\repos\testBD\testBD\bin\Debug\MySql.Data.xml
+C:\Users\Víctor\source\repos\testBD\testBD\obj\Debug\testBD.csprojAssemblyReference.cache
+C:\Users\Víctor\source\repos\testBD\testBD\obj\Debug\testBD.Form1.resources
+C:\Users\Víctor\source\repos\testBD\testBD\obj\Debug\testBD.Properties.Resources.resources
+C:\Users\Víctor\source\repos\testBD\testBD\obj\Debug\testBD.csproj.GenerateResource.cache
+C:\Users\Víctor\source\repos\testBD\testBD\obj\Debug\testBD.csproj.CopyComplete
+C:\Users\Víctor\source\repos\testBD\testBD\obj\Debug\testBD.exe
+C:\Users\Víctor\source\repos\testBD\testBD\obj\Debug\testBD.pdb
+C:\Users\Víctor\source\repos\testBD\testBD\obj\Debug\testBD.listausuarios.resources
