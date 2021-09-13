@@ -15,6 +15,7 @@ namespace testBD
         public listausuarios()
         {
             InitializeComponent();
+            //Método para completar el dataGridView
             llenarTabla();
             
         }

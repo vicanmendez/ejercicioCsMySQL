@@ -23,7 +23,7 @@ namespace testBD
             string email = txtEmail.Text;
             string sentencia = "INSERT INTO usuario (nombre, email) VALUES ('" + nombre + "', '" + email + "');";
             Conexion con = new Conexion();
-            if (con.ejecutarInsert(sentencia))
+            if (con.ejecutarInsert(sentencia) == true)
             {
                 MessageBox.Show("Usuario ingresado");
             }

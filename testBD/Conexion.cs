@@ -2,6 +2,7 @@
 using System;
 using System.Data;
 using System.Data.SqlClient;
+using System.Windows.Forms;
 
 namespace testBD
 {
@@ -12,20 +13,22 @@ namespace testBD
     private string usuario = "root"; //Usuario de acceso a MySQL
     private string password = ""; //Contraseña de usuario de acceso a MySQL
     private string[] datos = null; //Variable para almacenar el resultado
-    
+    private string cadenaConexion;
+    private MySqlConnection conexionBD;
     public Conexion()
             {
+            //Crearemos la cadena de conexión concatenando las variables
+
+            cadenaConexion = "Database=" + Bd + "; Data Source=" + Servidor + "; User Id=" + Usuario + "; Password=" + Password + "";
+            //Instancia para conexión a MySQL, recibe la cadena de conexión
+             conexionBD = new MySqlConnection(cadenaConexion);
         }
+
 
     public bool ejecutarInsert(string consulta)
         {
             bool ok = false;
-            //Crearemos la cadena de conexión concatenando las variables
-            string cadenaConexion = "Database=" + Bd + "; Data Source=" + Servidor + "; User Id=" + Usuario + "; Password=" + Password + "";
-
-            //Instancia para conexión a MySQL, recibe la cadena de conexión
-            MySqlConnection conexionBD = new MySqlConnection(cadenaConexion);
-            MySqlDataReader reader = null; //Variable para leer el resultado de la consulta
+           
 
             //Agregamos try-catch para capturar posibles errores de conexión o sintaxis.
             try
@@ -40,7 +43,7 @@ namespace testBD
             }
             catch (MySqlException ex)
             {
-                Console.WriteLine(ex.Message); //Si existe un error aquí muestra el mensaje
+                MessageBox.Show(ex.Message); //Si existe un error aquí muestra el mensaje
                 ok = false;
             }
             finally
@@ -52,11 +55,7 @@ namespace testBD
 
         public string[] ejecutarConsulta(string consulta)
         {
-            //Crearemos la cadena de conexión concatenando las variables
-            string cadenaConexion = "Database=" + Bd + "; Data Source=" + Servidor + "; User Id=" + Usuario + "; Password=" + Password + "";
-
-            //Instancia para conexión a MySQL, recibe la cadena de conexión
-            MySqlConnection conexionBD = new MySqlConnection(cadenaConexion);
+        
             MySqlDataReader reader = null; //Variable para leer el resultado de la consulta
 
             //Agregamos try-catch para capturar posibles errores de conexión o sintaxis.
@@ -93,11 +92,6 @@ namespace testBD
         //Precondicion: conexion creada
         public void llenarTablaConProcedimiento(String nombreProcedimiento, DataTable tabla)
         {
-            //Crearemos la cadena de conexión concatenando las variables
-            string cadenaConexion = "Database=" + Bd + "; Data Source=" + Servidor + "; User Id=" + Usuario + "; Password=" + Password + "";
-
-            //Instancia para conexión a MySQL, recibe la cadena de conexión
-            MySqlConnection conexionBD = new MySqlConnection(cadenaConexion);
             MySqlCommand comando = new MySqlCommand(nombreProcedimiento, conexionBD);
             //asignar nombre del procedure al commandText
             comando.CommandText = nombreProcedimiento;
@@ -114,10 +108,6 @@ namespace testBD
         //Precondicion: conexion creada
         public void llenarTablaConConsulta(String consulta, DataTable tabla)
         {
-            //Crearemos la cadena de conexión concatenando las variables
-            string cadenaConexion = "Database=" + Bd + "; Data Source=" + Servidor + "; User Id=" + Usuario + "; Password=" + Password + "";
-            //Instancia para conexión a MySQL, recibe la cadena de conexión
-            MySqlConnection conexionBD = new MySqlConnection(cadenaConexion);
             //Crear el SqlCommand con la consulta
             MySqlCommand comando = new MySqlCommand(consulta, conexionBD);
             MySqlDataAdapter adaptador = new MySqlDataAdapter(comando);
